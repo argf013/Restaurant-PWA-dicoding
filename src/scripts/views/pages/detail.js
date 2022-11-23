@@ -21,9 +21,10 @@ const Detail = {
       likeButtonContainer: document.querySelector('#likeButtonContainer'),
       movie: {
         id: movie.restaurant.id,
-        title: movie.restaurant.name,
-        vote_average: movie.restaurant.rating,
-        image: movie.restaurant.pictureId,
+        name: movie.restaurant.name,
+        pictureId: movie.restaurant.pictureId,
+        rating: movie.restaurant.rating,
+        description: movie.restaurant.description,
       },
     });
   },
