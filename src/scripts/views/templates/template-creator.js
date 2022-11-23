@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable import/prefer-default-export */
 import CONFIG from '../../globals/config';
 
 const createMovieDetailTemplate = (movie) => `
@@ -14,15 +12,11 @@ const createMovieDetailTemplate = (movie) => `
   <div class="restaurant__menus"> 
   <div class="restaurant__menus__foods"> 
   <h4>Foods Menu</h4>
-  <p>${movie.restaurant.menus.foods[0].name}</p>
-  <p>${movie.restaurant.menus.foods[2].name}</p>
-  <p>${movie.restaurant.menus.foods[3].name}</p>
+  ${movie.restaurant.menus.foods.map(({ name }) => `<p>${name}</p>`).join('')}
   </div>
   <div class="restaurant__menus__foods"> 
   <h4>Drinks Menu</h4>
-  <p>${movie.restaurant.menus.drinks[0].name}</p>
-  <p>${movie.restaurant.menus.drinks[1].name}</p>
-  <p>${movie.restaurant.menus.drinks[3].name}</p>
+  ${movie.restaurant.menus.drinks.map(({ name }) => `<p>${name}</p>`).join('')}
   </div>
   </div>
   <div class="restaurant__location">
@@ -39,9 +33,16 @@ const createMovieDetailTemplate = (movie) => `
   <p>${movie.restaurant.rating} of 5</p>
   <div class="movie__overview">
   <h3>Review</h3>
-  <p>Nama: ${movie.restaurant.customerReviews[0].name}</p>
-  <p>Tanggal: ${movie.restaurant.customerReviews[0].date}</p>
-  <p>Review: ${movie.restaurant.customerReviews[0].review}</p>
+  ${movie.restaurant.customerReviews
+    .map(
+      ({ name, date, review }) => `
+    <p>Nama: ${name}</p>
+    <p>Tanggal: ${date}</p>
+    <p>Review: ${review}</p>
+    <br />
+    `,
+    )
+    .join('')}
   </div>
   </div>
 `;
@@ -49,14 +50,14 @@ const createMovieDetailTemplate = (movie) => `
 const createMovieItemTemplate = (movie) => `
   <div class="movie-item">
     <div class="movie-item__header">
-      <img class="movie-item__header__poster" alt="${movie.name}"
-           src="${CONFIG.BASE_IMAGE_URL + movie.pictureId}">
+    <a href="/#/detail/${movie.id}"><img class="movie-item__header__poster" alt="${movie.name}"
+           src="${CONFIG.BASE_IMAGE_URL + movie.pictureId}"></a>
       <div class="movie-item__header__rating">
         <p>⭐️<span class="movie-item__header__rating__score">${movie.rating}</span></p>
       </div>
     </div>
     <div class="movie-item__content">
-      <h3><a href="/#/detail/${movie.id}">${movie.name}</a></h3>
+      <h3>${movie.name}</h3>
       <p>${movie.description}</p>
     </div>
   </div>

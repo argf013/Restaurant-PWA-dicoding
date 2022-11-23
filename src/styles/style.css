@@ -56,7 +56,7 @@ body {
 .app-bar .app-bar__menu button {
   background-color: transparent;
   border: none;
-  font-size: 18px;
+  font-size: 40px;
   padding: 8px;
   cursor: pointer;
 }
@@ -196,11 +196,7 @@ main {
 
 .movie-item .movie-item__content h3 {
   margin: 0 0 10px 0;
-}
-
-.movie-item .movie-item__content h3 a {
   color: #db0000;
-  text-decoration: none;
 }
 
 .movie-item .movie-item__content p {
@@ -271,4 +267,17 @@ footer p {
 footer p a {
   color: #db0000;
   text-decoration: none;
+}
+
+/*
+anchor
+*/
+
+a {
+  font-size: larger;
+  text-decoration: none;
+}
+
+b{
+  color: #db0000;
 }

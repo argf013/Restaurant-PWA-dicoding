@@ -1,9 +1,9 @@
 {
-  "id": "movie-catalogue-lite-pwa-1",
+  "id": "resto-dist-pwa-1",
   "start_url": "./index.html",
-  "name": "Movie Catalogue Lite",
-  "short_name": "Movie Lite",
-  "description": "Free Catalogue Movie for you",
+  "name": "Resto Dist",
+  "short_name": "Resto Dist",
+  "description": "Free Catalogue Resto for you",
   "display": "standalone",
   "background_color": "#FFFFFF",
   "theme_color": "#D84315",

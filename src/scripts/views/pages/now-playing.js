@@ -16,11 +16,10 @@ const NowPlaying = {
   async afterRender() {
     const restaurants = await TheMovieDbSource.nowPlayingMovies();
     const moviesContainer = document.querySelector('#movies');
-    restaurants.restaurants.forEach((movie) => {
+    restaurants.forEach((movie) => {
       moviesContainer.innerHTML += createMovieItemTemplate(movie);
     });
   },
-
 };
 
 export default NowPlaying;

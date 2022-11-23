@@ -3,7 +3,8 @@ import API_ENDPOINT from '../globals/api-endpoint';
 class TheMovieDbSource {
   static async nowPlayingMovies() {
     const response = await fetch(API_ENDPOINT.LIST);
-    return response.json();
+    const responseJson = await response.json();
+    return responseJson.restaurants;
   }
 
   static async detailMovie(id) {
